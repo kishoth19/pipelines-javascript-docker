@@ -2,7 +2,7 @@
 FROM node:12.18.1
 ENV NODE_ENV=production
 WORKDIR ~/app/
-RUN find * -type f -name package.json
+RUN find * -type d -name app
 COPY ~/app/package.json /
 COPY ~/app/package-lock.json /
 RUN npm install --production
