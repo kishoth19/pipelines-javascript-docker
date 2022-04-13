@@ -4,7 +4,7 @@ ENV NODE_ENV=production
 WORKDIR /app
 RUN ls -l
 RUN pwd
-RUN cp ["app/package.json", "app/package-lock.json*", "./"]
+COPY ["./app/package.json", "./app/package-lock.json*", "./"]
 RUN npm install --production
 COPY . .
 CMD [ "node", "server.js" ]
